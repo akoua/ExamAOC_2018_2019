@@ -5,8 +5,6 @@ import ci.culture.exam.interfaces.MaxFinder;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MaxFinderSequential implements MaxFinder<Double> {
     @Override

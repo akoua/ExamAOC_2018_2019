@@ -5,13 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,7 +31,7 @@ public class MaxFinderTest {
     public void testParallel() {
         MaxFinder<Double> maxFinder = new MaxFinderParallel();
         List<Double> input = DoubleStream.generate(()
-                -> Math.random() * 10).limit(10_000).boxed().collect(Collectors.toList());
+                -> Math.random() * 10).limit(100_000).boxed().collect(Collectors.toList());
 //        Logger.getGlobal().log(Level.INFO, "testParallel: "+input.size());
         Logger.getGlobal().log(Level.INFO, "testParallel: "+input);
         assertEquals(3.0, (maxFinder.getMaximum(input, (d) ->d
